@@ -7,5 +7,30 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
 library("Lock5withR")
+cereal = Cereal
+
+```
+
+This data set contains the nutritional information for thirty (30) popular types of cereal. Among the information given is the total number of carbs, fibers, sugars, and protein present in one serving of each type of cereal.
+
+```{r}
+head(cereal)
+```
+
+This is some pretty useful information! I wonder if there might be a relationship between the amount of sugar and the calories in a given cereal. Let's check it out on a scatterplot!
+
+```{r}
+Sugars = cereal$Sugars
+Calories = cereal$Calories
+plot(Sugars, Calories)
+```
+Okay, cool! What about some summary statistics?
+
+```{r}
+summary(Sugars)
+summary(Calories)
+```
+That's all, folks! They didn't ask for an interpretation, but basically we just see that there is a much greater range of calories per serving than sugars. 
+
+Now let's see if I can get this doc pushed to GitHub . . . . 
